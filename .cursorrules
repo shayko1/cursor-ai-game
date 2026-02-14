@@ -1,0 +1,41 @@
+# Cursor AI Rules - כללים ל-AI של Cursor
+
+## Project Context
+This is a **Hebrew Text Adventure Game** built with React + TypeScript that uses OpenAI API.
+It's a workshop starter project for Israeli developers learning to use Cursor + AI.
+
+## Language
+- UI text and game content should be in **Hebrew**
+- Code comments can be in Hebrew or English
+- Variable names and code should be in **English**
+
+## Tech Stack
+- React 18 with TypeScript
+- Vite for bundling
+- OpenAI SDK for AI integration
+- No CSS frameworks - vanilla CSS with custom properties
+
+## Architecture
+- `src/components/` - React components
+- `src/hooks/` - Custom React hooks (state management)
+- `src/services/` - External API services (OpenAI)
+- `src/types/` - TypeScript type definitions
+- `src/utils/` - Utility functions and prompt templates
+
+## Key Patterns
+- State management via `useReducer` in `useGame` hook
+- All AI communication goes through `src/services/openai.ts`
+- Game scenarios defined in `src/utils/prompts.ts`
+- RTL (right-to-left) layout for Hebrew
+
+## When Adding Features
+1. Define types first in `src/types/game.ts`
+2. Add state management in `src/hooks/useGame.ts`
+3. Create/update components in `src/components/`
+4. If it involves AI, update prompts in `src/utils/prompts.ts`
+
+## Important Notes
+- API key is loaded via `import.meta.env.VITE_OPENAI_API_KEY`
+- This is a workshop project - keep code readable and well-commented
+- Look for `🎯 CURSOR TASK` comments for extension points
+- Game supports RTL Hebrew - test text direction
