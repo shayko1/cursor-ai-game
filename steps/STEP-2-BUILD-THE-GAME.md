@@ -9,9 +9,9 @@ Open Cursor chat (`Cmd+L`) and paste this prompt. Don't overthink it — just tr
 > The game has two screens:
 >
 > 1. A START SCREEN where the player enters their name and picks one of 3 scenarios:
->    - "The Enchanted Fortress" 🏰 — a magical castle floating above clouds
->    - "Space Station Omega" 🚀 — a malfunctioning space station with aliens
->    - "Cyber Tel Aviv 2099" 🌆 — a cyberpunk version of Tel Aviv with neon and hacking
+>    - "המבצר המכושף" 🏰 — טירה קסומה המרחפת מעל העננים
+>    - "תחנת חלל אומגה" 🚀 — תחנת חלל תקולה עם חייזרים
+>    - "סייבר תל אביב 2099" 🌆 — גרסת סייברפאנק של תל אביב עם אורות ניאון והאקרים
 >
 > 2. A GAME SCREEN that looks like a chat interface:
 >    - Messages from the narrator appear on the left (like a chat bubble)
@@ -22,8 +22,9 @@ Open Cursor chat (`Cmd+L`) and paste this prompt. Don't overthink it — just tr
 >    - A header bar shows the scenario name, player name, turn count, and a "New Game" button
 >
 > For now, DON'T connect to any real AI — just make the narrator respond with a placeholder
-> message like "The adventure continues... (AI not connected yet)". We'll add OpenAI in the next step.
+> message like "ההרפתקה ממשיכה... (הבינה המלאכותית עדיין לא מחוברת)". We'll add OpenAI in the next step.
 >
+> IMPORTANT: All UI text, buttons, and game content must be in HEBREW.
 > Make it dark-themed with a purple accent (#7c5cfc), RTL support for Hebrew,
 > and a gaming aesthetic. Use the Heebo font for text.
 >
