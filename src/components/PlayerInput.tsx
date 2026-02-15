@@ -41,7 +41,7 @@ export function PlayerInput({ onSubmit, disabled }: PlayerInputProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
-          placeholder={disabled ? 'Waiting for response...' : 'What do you do?'}
+          placeholder={disabled ? 'ממתין/ה לתגובה...' : 'מה הפעולה הבאה שלך?'}
           disabled={disabled}
           className="action-input"
         />
@@ -50,7 +50,7 @@ export function PlayerInput({ onSubmit, disabled }: PlayerInputProps) {
           disabled={disabled || !input.trim()}
           className="send-button"
         >
-          Send
+          שליחה
         </button>
       </div>
     </div>

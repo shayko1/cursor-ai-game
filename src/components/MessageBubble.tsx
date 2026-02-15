@@ -15,17 +15,17 @@ export function MessageBubble({ message }: MessageBubbleProps) {
   const roleConfig = {
     narrator: {
       className: 'message-narrator',
-      label: 'Narrator',
+      label: 'המספר',
       icon: '📜',
     },
     player: {
       className: 'message-player',
-      label: 'You',
+      label: 'את/ה',
       icon: '🗡️',
     },
     system: {
       className: 'message-system',
-      label: 'System',
+      label: 'מערכת',
       icon: '⚙️',
     },
   };

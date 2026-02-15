@@ -26,19 +26,19 @@ export function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div className="start-screen">
       <div className="start-header">
-        <h1 className="game-title">&#x2694;&#xFE0F; AI Adventures &#x2694;&#xFE0F;</h1>
-        <p className="game-subtitle">AI-Powered Text Adventure Game</p>
+        <h1 className="game-title">&#x2694;&#xFE0F; הרפתקאות בינה מלאכותית &#x2694;&#xFE0F;</h1>
+        <p className="game-subtitle">משחק הרפתקאות טקסט מבוסס בינה מלאכותית</p>
       </div>
 
       <div className="start-form">
         <div className="input-group">
-          <label htmlFor="player-name">What's your name, adventurer?</label>
+          <label htmlFor="player-name">מה השם שלך, הרפתקן/ית?</label>
           <input
             id="player-name"
             type="text"
             value={playerName}
             onChange={(e) => setPlayerName(e.target.value)}
-            placeholder="Enter your name..."
+            placeholder="הקלד/י את השם שלך..."
             className="name-input"
             maxLength={20}
             onKeyDown={(e) => e.key === 'Enter' && handleStart()}
@@ -46,7 +46,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
         </div>
 
         <div className="scenario-selection">
-          <label>Choose a scenario:</label>
+          <label>בחר/י תרחיש:</label>
           <div className="scenario-grid">
             {SCENARIOS.map((scenario) => (
               <button
@@ -67,12 +67,12 @@ export function StartScreen({ onStart }: StartScreenProps) {
           onClick={handleStart}
           disabled={!playerName.trim() || !selectedScenario}
         >
-          Start Adventure!
+          התחל/י הרפתקה!
         </button>
       </div>
 
       <div className="start-footer">
-        <p>Built at Cursor + AI Workshop</p>
+        <p>נבנה בסדנת קורסור ובינה מלאכותית</p>
       </div>
     </div>
   );

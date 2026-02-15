@@ -16,9 +16,9 @@ const getClient = () => {
 
   if (!apiKey) {
     throw new Error(
-      '❌ Missing OpenAI API Key!\n' +
-      'Add VITE_OPENAI_API_KEY to your .env file.\n' +
-      'See README.md for instructions.'
+      '❌ חסר מפתח OpenAI!\n' +
+      'יש להוסיף VITE_OPENAI_API_KEY לקובץ .env.\n' +
+      'אפשר לראות הוראות בקובץ README.md.'
     );
   }
 
@@ -56,16 +56,16 @@ export async function sendMessage(
       temperature: 0.8, // A bit of creativity
     });
 
-    return response.choices[0]?.message?.content ?? 'Error: No response from AI';
+    return response.choices[0]?.message?.content ?? 'שגיאה: לא התקבלה תגובה מהבינה המלאכותית';
   } catch (error) {
     if (error instanceof OpenAI.APIError) {
       if (error.status === 401) {
-        throw new Error('❌ Invalid API Key. Double-check that you copied it correctly.');
+        throw new Error('❌ מפתח API לא תקין. כדאי לבדוק שההעתקה בוצעה נכון.');
       }
       if (error.status === 429) {
-        throw new Error('⏳ Too many requests. Wait a moment and try again.');
+        throw new Error('⏳ יש יותר מדי בקשות כרגע. נסה/י שוב בעוד רגע.');
       }
-      throw new Error(`API Error: ${error.message}`);
+      throw new Error(`שגיאת API: ${error.message}`);
     }
     throw error;
   }

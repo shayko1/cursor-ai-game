@@ -26,11 +26,11 @@ export function GameHeader({
         <span className="header-scenario">
           {scenarioEmoji} {scenarioTitle}
         </span>
-        <span className="header-player">Player: {playerName}</span>
-        <span className="header-turns">Turn: {Math.ceil(messageCount / 2)}</span>
+        <span className="header-player">שחקן/ית: {playerName}</span>
+        <span className="header-turns">תור: {Math.ceil(messageCount / 2)}</span>
       </div>
       <button className="reset-button" onClick={onReset}>
-        New Game
+        משחק חדש
       </button>
     </div>
   );

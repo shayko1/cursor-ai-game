@@ -44,7 +44,7 @@ export function GameScreen({ state, onSendAction, onReset }: GameScreenProps) {
           <div className="message-bubble message-narrator loading">
             <div className="message-header">
               <span className="message-icon">📜</span>
-              <span className="message-label">Narrator</span>
+              <span className="message-label">המספר</span>
             </div>
             <div className="typing-indicator">
               <span></span>

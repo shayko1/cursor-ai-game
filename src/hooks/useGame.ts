@@ -126,7 +126,7 @@ export function useGame() {
         message: {
           id: createMessageId(),
           role: 'system',
-          content: error instanceof Error ? error.message : 'Unexpected error',
+          content: error instanceof Error ? error.message : 'שגיאה לא צפויה',
           timestamp: new Date(),
         },
       });
