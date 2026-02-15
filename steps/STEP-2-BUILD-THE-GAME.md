@@ -24,7 +24,8 @@ Open Cursor chat (`Cmd+L`) and paste this prompt. Don't overthink it — just tr
 > For now, DON'T connect to any real AI — just make the narrator respond with a placeholder
 > message like "ההרפתקה ממשיכה... (הבינה המלאכותית עדיין לא מחוברת)". We'll add OpenAI in the next step.
 >
-> IMPORTANT: All UI text, buttons, and game content must be in HEBREW.
+> IMPORTANT: All player-facing game text must be in HEBREW.
+> This includes labels like "New Game", "Send", input placeholders, loading text, and message role labels.
 > Make it dark-themed with a purple accent (#7c5cfc), RTL support for Hebrew,
 > and a gaming aesthetic. Use the Heebo font for text.
 >

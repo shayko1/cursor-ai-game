@@ -37,6 +37,9 @@ Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 > - Stay in character and maintain story consistency
 > - Be descriptive and exciting
 >
+> Keep all player-facing UI and system messages in Hebrew as well
+> (buttons, placeholders, loading text, and error messages in the game screen).
+>
 > The game should send the full conversation history with each request
 > so the AI remembers what happened.
 >

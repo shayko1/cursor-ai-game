@@ -12,6 +12,7 @@ Open chat (`Cmd+L`):
 > Change the AI responses to stream word-by-word instead of appearing all at once.
 > Use OpenAI's streaming API. The player should see the text being "typed out"
 > in real-time, like a typewriter effect.
+> Keep any loading/status text in Hebrew.
 > ```
 
 ### Sound Effects
@@ -27,14 +28,16 @@ Open chat (`Cmd+L`):
 > Add command history to the player input, like a terminal.
 > Pressing arrow-up should show the previous command,
 > arrow-down the next one.
+> Keep all input placeholders, button labels, and hints in Hebrew.
 > ```
 
 ### A Fourth Scenario
 > ```
-> Add a new scenario: "Zombie Jerusalem" 🧟 —
+> Add a new scenario: "ירושלים בזומבים" 🧟 —
 > A zombie apocalypse has hit Jerusalem. The player is a survivor
 > navigating the Old City, finding supplies and other survivors.
 > Write a creative system prompt for the AI in the same style as the other scenarios.
+> The scenario title, description, and AI output must be in Hebrew.
 > ```
 
 ---

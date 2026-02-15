@@ -22,7 +22,14 @@ npm --version
 
 That's it. These three shortcuts are all you need to build an entire app.
 
-### 4. (Optional) See the Finished Game
+### 4. Language Rule for This Workshop
+Keep all workshop instructions in English, but keep all **player-facing game content** in Hebrew:
+- UI labels and buttons
+- Placeholders and status text
+- Narrator and scenario text
+- Error messages shown inside the game
+
+### 5. (Optional) See the Finished Game
 ```bash
 git clone git@github.com:shayk/cursor-ai-game.git
 cd cursor-ai-game && npm install && npm run dev

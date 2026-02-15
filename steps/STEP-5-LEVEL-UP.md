@@ -20,8 +20,9 @@ Pick whatever excites you. Each one is a single prompt to Cursor.
 > Add save and load functionality.
 > Auto-save the game after each turn to localStorage.
 > When the player opens the game and a save exists,
-> show a "Continue Adventure" button on the start screen.
-> Add a "Save & Exit" button in the game header.
+> show a "המשך הרפתקה" button on the start screen.
+> Add a "שמור וצא" button in the game header.
+> Keep all new player-facing labels and messages in Hebrew.
 > ```
 
 ---
@@ -42,10 +43,11 @@ Pick whatever excites you. Each one is a single prompt to Cursor.
 > When the AI describes a fight or encounter, show a combat overlay with:
 > - Health bars for the player and enemy
 > - Animated dice rolling
-> - Attack, Defend, and Flee buttons
+> - "תקיפה", "הגנה", and "בריחה" buttons
 > - Damage calculations based on dice results
 > Send the combat outcome back to the AI so it continues the story.
 > Make it dramatic with screen shake and flash effects.
+> Keep all combat UI text in Hebrew.
 > ```
 
 ### Voice Narration
@@ -55,6 +57,7 @@ Pick whatever excites you. Each one is a single prompt to Cursor.
 > When clicked, generate and play audio of that message using the 'onyx' voice.
 > Also add a toggle to auto-narrate every new message.
 > Show a sound wave animation while audio is playing.
+> Keep toggle labels and audio status text in Hebrew.
 > ```
 
 ---
@@ -74,6 +77,7 @@ Pick whatever excites you. Each one is a single prompt to Cursor.
 > Each player takes turns entering actions.
 > The AI narrator should address both players by name
 > and weave their actions into the same story.
+> Keep all multiplayer UI text in Hebrew.
 > ```
 
 ---

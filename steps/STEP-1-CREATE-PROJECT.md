@@ -11,6 +11,7 @@ npm run dev
 Open http://localhost:3000 — you'll see Vite's default welcome page.
 
 That's it for the terminal. From here on out, Cursor does the work.
+From this point forward, keep workshop/chat instructions in English but keep the game itself (all player-facing text) in Hebrew.
 
 ---
 
