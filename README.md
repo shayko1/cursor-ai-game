@@ -2,7 +2,7 @@
 
 > **Build your first AI game without writing a single line of code.**
 
-A text adventure game powered by OpenAI where the AI narrates a unique story based on your choices. This repo is both a **working example** and a **step-by-step workshop guide** for learning to build with [Cursor](https://cursor.com) + AI.
+A text adventure game powered by a Wix OpenAI-compatible endpoint where the AI narrates a unique story based on your choices. This repo is both a **working example** and a **step-by-step workshop guide** for learning to build with [Cursor](https://cursor.com) + AI.
 
 ---
 
@@ -13,7 +13,7 @@ Developers with a CS background ready to dive into AI development. No prior Reac
 A text adventure in a chat interface. Pick a scenario — Enchanted Fortress 🏰, Space Station 🚀, or Cyber Tel Aviv 🌆 — and the AI tells your story. Every playthrough is unique.
 
 ## 🛠️ Tech Stack
-React + TypeScript (Vite) · OpenAI API (gpt-4o-mini) · Cursor AI
+React + TypeScript (Vite) · Wix OpenAI-compatible API (gpt-4o-mini) · Cursor AI
 
 ---
 
@@ -23,7 +23,7 @@ React + TypeScript (Vite) · OpenAI API (gpt-4o-mini) · Cursor AI
 git clone git@github.com:shayk/cursor-ai-game.git
 cd cursor-ai-game
 npm install
-cp .env.example .env    # add your OpenAI API key
+cp .env.example .env    # add your Wix API key
 npm run dev
 ```
 
@@ -38,7 +38,7 @@ The whole point: **describe what you want in plain English, and Cursor builds it
 | [Step 0](steps/STEP-0-SETUP.md) | Install Cursor & Node.js | 5 min |
 | [Step 1](steps/STEP-1-CREATE-PROJECT.md) | Create the project | 5 min |
 | [Step 2](steps/STEP-2-BUILD-THE-GAME.md) | Build the entire game UI with one prompt | 20 min |
-| [Step 3](steps/STEP-3-ADD-AI.md) | Connect OpenAI and bring it to life | 15 min |
+| [Step 3](steps/STEP-3-ADD-AI.md) | Connect Wix OpenAI-compatible API and bring it to life | 15 min |
 | [Step 4](steps/STEP-4-POLISH.md) | Polish — streaming, sounds, new scenarios | 10 min |
 | [Step 5](steps/STEP-5-LEVEL-UP.md) | Level up — images, combat, voice, deploy | ♾️ |
 

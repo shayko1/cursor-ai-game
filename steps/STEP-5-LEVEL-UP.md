@@ -67,7 +67,7 @@ Pick whatever excites you. Each one is a single prompt to Cursor.
 ### Deploy It Online
 > ```
 > I want to deploy this game to the internet.
-> Move the OpenAI calls to a server-side API route so the key isn't exposed.
+> Move the Wix OpenAI-compatible API calls to a server-side API route so the key isn't exposed.
 > Set it up for Vercel deployment with the API key as an environment variable.
 > ```
 

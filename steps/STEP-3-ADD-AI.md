@@ -1,18 +1,20 @@
 # 🤖 Step 3: Power It With AI (15 minutes)
 
-## Add Your OpenAI Key
+## Add Your Wix OpenAI-Compatible Key
 
 First, open Cursor chat (`Cmd+L`):
 
 > ```
 > Create a .env file with VITE_OPENAI_API_KEY set to a placeholder.
+> Add VITE_OPENAI_BASE_URL with https://www.wixapis.com/openai/v1.
 > Also create a .env.example with the same placeholder.
 > Make sure .env is in .gitignore so we never commit secrets.
 > ```
 
 Now open the `.env` file and paste in your real API key:
 ```
-VITE_OPENAI_API_KEY=sk-proj-xxxxxxxxxx
+VITE_OPENAI_API_KEY=wix-sk-xxxxxxxxxx
+VITE_OPENAI_BASE_URL=https://www.wixapis.com/openai/v1
 ```
 
 ---
@@ -22,12 +24,13 @@ VITE_OPENAI_API_KEY=sk-proj-xxxxxxxxxx
 Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 
 > ```
-> Now I want to connect this game to OpenAI so the narrator is powered by real AI.
+> Now I want to connect this game to the Wix OpenAI-compatible API so the narrator is powered by real AI.
 >
 > Replace the placeholder narrator responses with actual OpenAI API calls:
 >
 > - Use the OpenAI SDK (already installed) with the gpt-4o-mini model
 > - Read the API key from import.meta.env.VITE_OPENAI_API_KEY
+> - Use baseURL: import.meta.env.VITE_OPENAI_BASE_URL || "https://www.wixapis.com/openai/v1"
 > - Use dangerouslyAllowBrowser: true (this is a workshop project, not production)
 >
 > Each scenario should have a system prompt that tells the AI to:

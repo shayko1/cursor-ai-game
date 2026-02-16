@@ -13,10 +13,12 @@ import { GameMessage } from '../types/game';
 // For this workshop, we're calling OpenAI directly from the browser.
 const getClient = () => {
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  const baseURL =
+    import.meta.env.VITE_OPENAI_BASE_URL || 'https://www.wixapis.com/openai/v1';
 
   if (!apiKey) {
     throw new Error(
-      '❌ חסר מפתח OpenAI!\n' +
+      '❌ חסר מפתח Wix OpenAI!\n' +
       'יש להוסיף VITE_OPENAI_API_KEY לקובץ .env.\n' +
       'אפשר לראות הוראות בקובץ README.md.'
     );
@@ -24,6 +26,7 @@ const getClient = () => {
 
   return new OpenAI({
     apiKey,
+    baseURL,
     dangerouslyAllowBrowser: true, // Workshop only! Use server-side in production.
   });
 };
