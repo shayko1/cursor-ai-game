@@ -20,6 +20,36 @@ VITE_OPENAI_BASE_URL=/wix-openai/v1
 The local proxy path above should be forwarded by Vite to:
 `https://www.wixapis.com/openai/v1`
 
+## One-Shot Master Prompt (Recommended)
+
+Open Cursor chat (`Cmd+L`) and paste this single prompt:
+
+> ```
+> Implement Step 3 end-to-end in this project: connect the game to the Wix OpenAI-compatible API.
+>
+> Requirements:
+> 1) Find where placeholder narrator responses are currently generated and replace them with real API calls.
+> 2) If `src/services` does not exist, create it. Create/update one AI service module (recommended: `src/services/openai.ts`) that exports `sendMessage`.
+> 3) Use OpenAI SDK with model `gpt-4o-mini`.
+> 4) Read env vars:
+>    - `VITE_OPENAI_API_KEY`
+>    - `VITE_OPENAI_BASE_URL` (default `/wix-openai/v1`)
+> 5) In the service, make baseURL robust:
+>    - If env base URL starts with `http`, use it directly.
+>    - Otherwise convert to absolute URL using `new URL(configuredBaseURL, window.location.origin).toString()`.
+> 6) In `vite.config.ts`, configure `server.proxy` so `/wix-openai/v1` forwards to `https://www.wixapis.com/openai/v1` (with rewrite).
+> 7) Ensure full conversation history is sent on each request.
+> 8) Keep all player-facing UI text and system messages in Hebrew.
+> 9) Handle errors clearly:
+>    - invalid key (401)
+>    - rate limit (429)
+>    - generic API error
+>
+> After coding, list exactly which files were changed and why.
+> ```
+
+If this one-shot prompt succeeds, you can skip the detailed sections below.
+
 ## Important: Use Exact Proxy + BaseURL Logic
 
 To avoid `Connection error` and `Invalid URL`, make Cursor apply these exact changes.
@@ -78,7 +108,7 @@ const getClient = () => {
 
 ---
 
-## Connect the AI to Your Game
+## Detailed Prompt (Fallback)
 
 Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 
