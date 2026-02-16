@@ -20,6 +20,55 @@ VITE_OPENAI_BASE_URL=/wix-openai/v1
 The local proxy path above should be forwarded by Vite to:
 `https://www.wixapis.com/openai/v1`
 
+## Important: Use Exact Proxy + BaseURL Logic
+
+To avoid `Connection error` and `Invalid URL`, make Cursor apply these exact changes.
+
+### 1) Replace `vite.config.ts` with this
+
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000,
+    open: true,
+    proxy: {
+      '/wix-openai/v1': {
+        target: 'https://www.wixapis.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/wix-openai\/v1/, '/openai/v1'),
+      },
+    },
+  },
+})
+```
+
+### 2) In `src/services/openai.ts`, use this `getClient` logic
+
+```ts
+const getClient = () => {
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  const configuredBaseURL = import.meta.env.VITE_OPENAI_BASE_URL || '/wix-openai/v1';
+  const baseURL = configuredBaseURL.startsWith('http')
+    ? configuredBaseURL
+    : new URL(configuredBaseURL, window.location.origin).toString();
+
+  if (!apiKey) {
+    throw new Error('Missing Wix OpenAI key');
+  }
+
+  return new OpenAI({
+    apiKey,
+    baseURL,
+    dangerouslyAllowBrowser: true,
+  });
+};
+```
+
 ---
 
 ## Connect the AI to Your Game
@@ -58,6 +107,11 @@ Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 ```bash
 npm run dev
 ```
+
+Then hard refresh the browser and check DevTools Network:
+- You should see requests to `/wix-openai/v1/chat/completions` on your local origin.
+- If you see `Invalid URL`, your `getClient` logic is not using the `new URL(..., window.location.origin)` fallback.
+- If you see direct calls to `https://www.wixapis.com/openai/v1/...` from browser JS, your `VITE_OPENAI_BASE_URL` is not set to `/wix-openai/v1`.
 
 Pick a scenario, enter your name, and... the AI is telling your story. Type an action and watch it respond.
 
