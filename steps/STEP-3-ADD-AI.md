@@ -50,7 +50,7 @@ Open Cursor chat (`Cmd+L`) and paste this single prompt:
 
 If this one-shot prompt succeeds, you can skip the detailed sections below.
 
-## Detailed Prompt (Fallback)
+## Detailed Prompt
 
 Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 
