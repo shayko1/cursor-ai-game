@@ -47,7 +47,14 @@ export default defineConfig({
 })
 ```
 
-### 2) In `src/services/openai.ts`, use this `getClient` logic
+### 2) Create or update an AI service file (do not assume folder exists)
+
+If your project does not yet have `src/services/`, create it first.
+Use one dedicated file for API calls, for example:
+- `src/services/openai.ts` (recommended)
+- or your existing app convention (`src/lib/ai.ts`, `src/api/openai.ts`, etc.)
+
+Use this `getClient` logic in that file:
 
 ```ts
 const getClient = () => {
@@ -79,6 +86,11 @@ Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 > Now I want to connect this game to the Wix OpenAI-compatible API so the narrator is powered by real AI.
 >
 > Replace the placeholder narrator responses with actual OpenAI API calls:
+>
+> - First, find where the placeholder narrator response is currently generated in this project.
+> - If `src/services` doesn't exist, create it.
+> - Create (or update) a single AI service module and export a `sendMessage` function from it.
+> - Update all imports/callers to use that new service function.
 >
 > - Use the OpenAI SDK (already installed) with the gpt-4o-mini model
 > - Read the API key from import.meta.env.VITE_OPENAI_API_KEY
@@ -112,6 +124,8 @@ Then hard refresh the browser and check DevTools Network:
 - You should see requests to `/wix-openai/v1/chat/completions` on your local origin.
 - If you see `Invalid URL`, your `getClient` logic is not using the `new URL(..., window.location.origin)` fallback.
 - If you see direct calls to `https://www.wixapis.com/openai/v1/...` from browser JS, your `VITE_OPENAI_BASE_URL` is not set to `/wix-openai/v1`.
+- If you still see placeholder text, Cursor updated the wrong file. Ask it:
+  "Find the exact placeholder narrator path and replace it with the service `sendMessage` call."
 
 Pick a scenario, enter your name, and... the AI is telling your story. Type an action and watch it respond.
 
