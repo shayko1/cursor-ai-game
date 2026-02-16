@@ -50,64 +50,6 @@ Open Cursor chat (`Cmd+L`) and paste this single prompt:
 
 If this one-shot prompt succeeds, you can skip the detailed sections below.
 
-## Important: Use Exact Proxy + BaseURL Logic
-
-To avoid `Connection error` and `Invalid URL`, make Cursor apply these exact changes.
-
-### 1) Replace `vite.config.ts` with this
-
-```ts
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    proxy: {
-      '/wix-openai/v1': {
-        target: 'https://www.wixapis.com',
-        changeOrigin: true,
-        secure: true,
-        rewrite: (path) => path.replace(/^\/wix-openai\/v1/, '/openai/v1'),
-      },
-    },
-  },
-})
-```
-
-### 2) Create or update an AI service file (do not assume folder exists)
-
-If your project does not yet have `src/services/`, create it first.
-Use one dedicated file for API calls, for example:
-- `src/services/openai.ts` (recommended)
-- or your existing app convention (`src/lib/ai.ts`, `src/api/openai.ts`, etc.)
-
-Use this `getClient` logic in that file:
-
-```ts
-const getClient = () => {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-  const configuredBaseURL = import.meta.env.VITE_OPENAI_BASE_URL || '/wix-openai/v1';
-  const baseURL = configuredBaseURL.startsWith('http')
-    ? configuredBaseURL
-    : new URL(configuredBaseURL, window.location.origin).toString();
-
-  if (!apiKey) {
-    throw new Error('Missing Wix OpenAI key');
-  }
-
-  return new OpenAI({
-    apiKey,
-    baseURL,
-    dangerouslyAllowBrowser: true,
-  });
-};
-```
-
----
-
 ## Detailed Prompt (Fallback)
 
 Now the magic — open Cursor chat (`Cmd+L`) and paste this:
