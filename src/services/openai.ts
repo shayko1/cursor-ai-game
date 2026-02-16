@@ -13,8 +13,10 @@ import { GameMessage } from '../types/game';
 // For this workshop, we're calling OpenAI directly from the browser.
 const getClient = () => {
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-  const baseURL =
-    import.meta.env.VITE_OPENAI_BASE_URL || 'https://www.wixapis.com/openai/v1';
+  const configuredBaseURL = import.meta.env.VITE_OPENAI_BASE_URL || '/wix-openai/v1';
+  const baseURL = configuredBaseURL.startsWith('http')
+    ? configuredBaseURL
+    : new URL(configuredBaseURL, window.location.origin).toString();
 
   if (!apiKey) {
     throw new Error(

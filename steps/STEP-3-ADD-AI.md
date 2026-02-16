@@ -6,7 +6,7 @@ First, open Cursor chat (`Cmd+L`):
 
 > ```
 > Create a .env file with VITE_OPENAI_API_KEY set to a placeholder.
-> Add VITE_OPENAI_BASE_URL with https://www.wixapis.com/openai/v1.
+> Add VITE_OPENAI_BASE_URL with /wix-openai/v1.
 > Also create a .env.example with the same placeholder.
 > Make sure .env is in .gitignore so we never commit secrets.
 > ```
@@ -14,8 +14,11 @@ First, open Cursor chat (`Cmd+L`):
 Now open the `.env` file and paste in your real API key:
 ```
 VITE_OPENAI_API_KEY=wix-sk-xxxxxxxxxx
-VITE_OPENAI_BASE_URL=https://www.wixapis.com/openai/v1
+VITE_OPENAI_BASE_URL=/wix-openai/v1
 ```
+
+The local proxy path above should be forwarded by Vite to:
+`https://www.wixapis.com/openai/v1`
 
 ---
 
@@ -30,7 +33,8 @@ Now the magic — open Cursor chat (`Cmd+L`) and paste this:
 >
 > - Use the OpenAI SDK (already installed) with the gpt-4o-mini model
 > - Read the API key from import.meta.env.VITE_OPENAI_API_KEY
-> - Use baseURL: import.meta.env.VITE_OPENAI_BASE_URL || "https://www.wixapis.com/openai/v1"
+> - Use baseURL: import.meta.env.VITE_OPENAI_BASE_URL || "/wix-openai/v1"
+> - In vite.config.ts add a server proxy so "/wix-openai/v1" forwards to "https://www.wixapis.com/openai/v1"
 > - Use dangerouslyAllowBrowser: true (this is a workshop project, not production)
 >
 > Each scenario should have a system prompt that tells the AI to:

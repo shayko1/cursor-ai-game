@@ -27,6 +27,8 @@ cp .env.example .env    # add your Wix API key
 npm run dev
 ```
 
+For local dev, keep `VITE_OPENAI_BASE_URL=/wix-openai/v1` (the Vite proxy forwards to `https://www.wixapis.com/openai/v1`).
+
 ---
 
 ## 📚 Workshop — Build It Yourself
